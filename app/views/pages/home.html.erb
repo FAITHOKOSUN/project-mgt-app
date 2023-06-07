@@ -1,0 +1,38 @@
+<div class="logo-container ">
+  <!-- Your logo image or content here -->
+</div>
+
+<div class="container mt-4">
+  <% if user_signed_in? %>
+  <!-- <div class="jumbotron text-center">
+    <h1 class="display-4">COLLABORATE</h1>
+    <p class="lead">A project management tool for developers</p> -->
+    
+      <!-- User is signed in -->
+    <% else %>
+     <div class="container mt-4">
+  
+        <div class="jumbotron text-center">
+          <h1 class="display-4">COLLABORATE</h1>
+          <p class="lead">A project management tool for developers</p>
+            <div class="row justify-content-center">
+              <div class="col-sm-4">
+                <a href="<%= new_user_registration_path %>" class="btn btn-primary btn-block">Sign up</a>
+        </div>
+        <div class="col-sm-4">
+          <a href="<%= new_user_session_path %>" class="btn btn-primary btn-block"> Sign in</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<style>
+  .display-4 {
+    font-weight: bolder;
+  }
+  .logo-container {
+    display: flex;
+    justify-content: center;
+  }
+</style>
