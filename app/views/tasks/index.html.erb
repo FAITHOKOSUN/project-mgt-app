@@ -1,0 +1,39 @@
+<div class='container'>
+  <h1 class="text-center">Projects</h1>
+  <p id="notice"><%= notice %></p>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Created by</h5>
+          <p class="card-text"><%= current_user.email %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <% @tasks.each do |task| %>
+        <div class="card" style="width: 18rem;">
+          <div class="card-header bg-black text-white d-flex justify-content-between align-items-center">
+            <h5 class="card-title"><%= task.name %></h5>
+            <% if task.user == current_user %>
+              <%= link_to "Edit", edit_task_path(task), class: "btn btn-primary" %>
+            <% end %>
+          </div>
+          <div class="card-body">
+            <p class="card-text"><%= task.description %></p>
+          </div>
+          <div class="card-footer">
+            <% if task.user == current_user %>
+              <div class="d-flex justify-content-between align-items-center">
+                <%= button_to "Delete", task_path(task), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+                <div>
+                  <p>ID: <%= task.user_id %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -24,11 +24,11 @@ ActiveAdmin.register User do
     end
     f.actions
   end
-   index  do
-    id_column
-    column :email
-    actions
+   # index  do
+   #  id_column
+   #  column :email
+   #  actions
 
      
-   end
+   # end
 end

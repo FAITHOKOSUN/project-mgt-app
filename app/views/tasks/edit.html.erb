@@ -1,0 +1,24 @@
+<div class='container'>
+   <h1 class="text-center">Edit Projects</h1>
+
+  
+
+  <%= render "form", task: @task %>
+
+  <br>
+
+  <div>
+    <%= link_to "Project Overview", @task %> | 
+    <%= link_to "Back", tasks_path %> |
+     <form action="<%= task_path(@task) %>" method="post" style="display: inline-block;">
+    <%= button_to "Delete Project", @task, method: :delete, data: {  confirm: "Are you sure?", turbo_confirm: "Are you sure?" }%>
+  </form>
+  </div>
+</br>
+   <%= form_tag admin_user_path, method: :post do %>
+  <%= label_tag :email, 'Email:' %>
+  <%= text_field_tag :email, nil, placeholder: 'Enter email' %>
+  <%= submit_tag 'Assign Admin' %>
+<% end %>
+
+</div>

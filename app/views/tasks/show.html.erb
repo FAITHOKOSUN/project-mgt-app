@@ -1,0 +1,33 @@
+  
+<div class="jumbotron">
+  <h4 class="display-4">Created by: <%= @task.user.email %></h4>
+  <p class="lead"> Name of project: <%= @task.name %> </br>
+     Project Description: <%= @task.description %> </p>
+
+  <br>
+
+  <hr class="my-4">
+  <% if @task.user == current_user %>
+    <%= link_to "Back", tasks_path, class: "btn btn-primary btn-lg" %>
+  <% end %>
+</div>
+
+
+  
+<!-- 
+<div>
+  
+  <%= link_to "Edit", edit_task_path(@task) %> 
+
+  <%= link_to "Back", tasks_path %>
+ 
+<!--   </form> -->
+</div>
+ -->
+ 
+
+
+
+
+
+

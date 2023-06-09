@@ -12,6 +12,7 @@ gem 'devise'
 gem 'activeadmin'
 gem "puma", "~> 5.0"
 gem "importmap-rails"
+gem "carrierwave"
 
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]

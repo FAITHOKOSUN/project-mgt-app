@@ -1,0 +1,54 @@
+<div class='container'>
+  <h1 class="text-center">New Project!!</h1>
+    
+  <p>New edited description</p>
+
+  Members: <p><%= @task.user.email %></p>    
+
+  <%= form_with(model: @task) do |form| %>
+    <% if @task.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+        <ul>
+          <% @task.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="text-center">
+      <p>Created by: <%= @task.user.email %></p>
+    </div>
+    <br/>
+
+    <div class="field form-group">
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name, class: "form-control", placeholder: "Project name" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :description, style: "display: block" %>
+      <%= form.text_field :description, placeholder: "New description" %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :image_file, style: "display: block" %>
+      <div class="custom-file">
+        <%= form.file_field :image_file, class: "custom-file-input", id: "inputGroupFile01", aria_describedby: "inputGroupFileAddon01" %>
+        <label class="custom-file-label" for="inputGroupFile01"><%= form.file_field :image_file %></label>
+      </div>
+    </div>
+
+    <div class="field form-group">
+      <%= form.submit %>
+    </div>
+  <% end %>
+
+  <br>
+
+  <div>
+    <%= link_to "Projects Overview", tasks_path %>
+  </div>
+</div>
