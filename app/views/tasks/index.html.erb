@@ -6,7 +6,10 @@
       <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">Created by</h5>
-          <p class="card-text"><%= current_user.email %></p>
+          <p class="card-text"><% if current_user %>
+       <p class="card-text"><%= current_user.email %></p>
+      <% end %>
+       </p>
         </div>
       </div>
     </div>

@@ -1,6 +1,8 @@
 <div class='container'>
   <h1 class="text-center">New Project!!</h1>
-    
+     <div class="text-center">
+      <p>Created by: <%= @task.user.email %></p>
+    </div>
   <p>New edited description</p>
 
   Members: <p><%= @task.user.email %></p>    
@@ -18,9 +20,7 @@
       </div>
     <% end %>
 
-    <div class="text-center">
-      <p>Created by: <%= @task.user.email %></p>
-    </div>
+   
     <br/>
 
     <div class="field form-group">

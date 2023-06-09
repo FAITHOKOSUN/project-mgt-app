@@ -1,7 +1,11 @@
 
 <% if user_signed_in? %>
     <nav class="navbar navbar-expand-sm navbar-white ">
-  <%= link_to 'icon', root_path, class:"navbar-brand" %>
+ <%= link_to(root_path, class: "navbar-brand") do %>
+  <%= image_tag("header_logo.jpg", class: "logo-image") %>
+<% end %>
+
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -23,6 +27,7 @@
 
    </ul>
    <%end%>
+   
  
  </div>
 </nav>
