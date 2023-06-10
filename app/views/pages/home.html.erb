@@ -1,14 +1,10 @@
 <div class="logo-container ">
-  <!-- Your logo image or content here -->
+ <%= image_tag "new logo.jpg", alt: "Logo", class: "navbar-brand" %>
 </div>
 
 <div class="container mt-4">
  
-  <!-- <div class="jumbotron text-center">
-    <h1 class="display-4">COLLABORATE</h1>
-    <p class="lead">A project management tool for developers</p> -->
-    
-      <!-- User is signed in -->
+ 
   <% if user_signed_in? %>
     <% else %>
      <div class="container mt-4">
@@ -18,10 +14,10 @@
           <p class="lead">A project management tool for developers</p>
             <div class="row justify-content-center">
               <div class="col-sm-4">
-                <a href="<%= new_user_registration_path %>" class="btn btn-primary btn-block">Sign up</a>
+                <a href="<%= new_user_registration_path %>" class="btn btn-primary btn-block">Sign in</a>
         </div>
         <div class="col-sm-4">
-          <a href="<%= new_user_session_path %>" class="btn btn-primary btn-block"> Sign in</a>
+          <a href="<%= new_user_session_path %>" class="btn btn-primary btn-block"> Log in</a>
         </div>
       </div>
     <% end %>

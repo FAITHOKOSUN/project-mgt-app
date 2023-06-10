@@ -40,10 +40,12 @@
         <label class="custom-file-label" for="inputGroupFile01"><%= form.file_field :image_file %></label>
       </div>
     </div>
+  <br/>
+    
+  <div class="form-group">
+    <%= form.submit "Create project", class: "btn btn-primary" %>
+  </div>
 
-    <div class="field form-group">
-      <%= form.submit %>
-    </div>
   <% end %>
 
   <br>

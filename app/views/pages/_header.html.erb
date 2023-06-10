@@ -1,39 +1,34 @@
-
 <% if user_signed_in? %>
-    <nav class="navbar navbar-expand-sm navbar-white ">
- <%= link_to(tasks_path, class: "navbar-brand") do %>
-  <%= image_tag("header_logo.jpg", class: "logo-image") %>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <%= link_to(tasks_path, class: "navbar-brand") do %>
+      <%= image_tag("header_logo.jpg", class: "logo-image") %>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to "Add project", new_task_path, class: "nav-link" %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Edit profile", admin_users_path, class: "nav-link" %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </nav>
 <% end %>
-
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-    </ul>
-    <ul class="nav justify-content-end ml-auto"> 
-      <li class="nav-item">
-      <%= link_to "Add project", new_task_path, class: "nav-link" %>
-     </li>
-
-     <li class="nav-item">
-      <%= link_to "project", tasks_path, class: "nav-link" %>
-     </li>
-
-    <li class="nav-item">
-    <%= link_to "Edit profile", admin_users_path, class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-    <%= link_to "Log out", destroy_user_session_path, method: :delete, data: { turbo_confirm: "sure?" }, class: "nav-link" %>
-
-    </li>
-
-   </ul>
-   <%end%>
-   
- 
- </div>
-</nav>
+<style>
+.navbar-nav .nav-link {
+  font-weight: bold;
+  color: white;
+}
+</style>
 

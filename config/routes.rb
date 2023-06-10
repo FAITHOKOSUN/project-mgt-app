@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
   resources :tasks
-  resources :users
   ActiveAdmin.routes(self)
   devise_for :users
+
+  resources :users, only: [:edit, :update]
+  get 'users/:id/show' => 'users#show', as: :show_user
+  get 'users/sign_out' => 'users#sign_out_user', as: :sign_out_user
+  
   root 'pages#home'
-
-  devise_scope :user do
-    get 'users/sign_out' => "devise/sessions#destroy"
-end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
